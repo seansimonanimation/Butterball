@@ -12,6 +12,8 @@ public class InputManagerScript : MonoBehaviour
     float Velocity;
     Vector2 MotionVectorThisFrame;
     Vector2 PrevFramePos;
+   [SerializeField] Vector2 xLimits;
+   [SerializeField] Vector2 zLimits;
 
     void Start(){
         touchData = TouchData.CreateInstance<TouchData>();
@@ -22,15 +24,18 @@ public class InputManagerScript : MonoBehaviour
         touchPressAction = playerInput.actions["WorldInteraction/TouchPress"];
         touchPositionAction = playerInput.actions["WorldInteraction/TouchPosition"];
     }
-    void FixedUpdate(){
-        GetTouchVector();
+    void FixedUpdate()
+    {
+        GetAndApplyTouchVector();
         Velocity = Velocity * touchPressAction.ReadValue<float>();
-        transform.position = new Vector3((transform.position.x + MotionVectorThisFrame.x*Velocity),0.0f,(transform.position.z + MotionVectorThisFrame.y*Velocity));
+        float xVal = (transform.position.x + MotionVectorThisFrame.x*Velocity);
+        float zVal = (transform.position.z + MotionVectorThisFrame.y*Velocity);
+        transform.position = new Vector3(Mathf.Clamp(xVal,xLimits.x,xLimits.y),0.0f,Mathf.Clamp(zVal,zLimits.x,zLimits.y));
 
         //do the same thing we did for the foot and apply to foot.
     }
 
-    private void GetTouchVector(){
+    private void GetAndApplyTouchVector(){
         if (initialTouchPos != Vector2.zero)
         {
             currentTouchPos = touchPositionAction.ReadValue<Vector2>();
