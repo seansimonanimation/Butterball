@@ -489,6 +489,82 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_ApplyBeforeBody: 0
+--- !u!1 &1864593352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864593354}
+  - component: {fileID: 1864593353}
+  - component: {fileID: 1864593355}
+  m_Layer: 0
+  m_Name: TouchManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1864593353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864593352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a794792703ec4024cb06c4479310d3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1864593354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864593352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1864593355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864593352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9ebe21ceedd22cb4e9028c78e9db7f90,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Touch
+  m_DefaultActionMap: WorldInteraction
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &649047017730380238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,6 +656,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 328697933958247135, guid: b799146fb9ed9594fb6492b3a15a4f54,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: WorldInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 328697933958247135, guid: b799146fb9ed9594fb6492b3a15a4f54,
+        type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Touch
+      objectReference: {fileID: 0}
     - target: {fileID: 6109580369604874294, guid: b799146fb9ed9594fb6492b3a15a4f54,
         type: 3}
       propertyPath: m_Name
@@ -592,18 +678,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6882140513379535500, guid: b799146fb9ed9594fb6492b3a15a4f54,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.161
-      objectReference: {fileID: 0}
-    - target: {fileID: 6882140513379535500, guid: b799146fb9ed9594fb6492b3a15a4f54,
-        type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6882140513379535500, guid: b799146fb9ed9594fb6492b3a15a4f54,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.11
+      value: -2.108
       objectReference: {fileID: 0}
     - target: {fileID: 6882140513379535500, guid: b799146fb9ed9594fb6492b3a15a4f54,
         type: 3}
@@ -640,7 +721,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 328697933958247135, guid: b799146fb9ed9594fb6492b3a15a4f54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -667,6 +749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ballParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216666147904841119, guid: 14b2a741d12ab0649a18aa0bf243758d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 5075352510600077753, guid: 14b2a741d12ab0649a18aa0bf243758d,
         type: 3}
