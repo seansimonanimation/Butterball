@@ -4,8 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ButterBallPatio.unity
+    guid: ea4025a2a06f9664f97ada915d9b0be1
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f5d1d941ceb6524448b3bad32b0e2573,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 95ac91afc91f27e45ab7e9d8ded45f54, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: f590f075682bdc346badb330b9364025, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 554d6644766015a469716a3ec5cc4851,
